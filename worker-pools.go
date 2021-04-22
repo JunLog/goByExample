@@ -6,7 +6,7 @@ import (
 )
 
 func worker(id int, jobs <-chan int, results chan<- int) {
-	// jobs、results 通道参数，只读
+	// jobs、results 通道参数，<-chan 只读， chan<- 只写
 	for j := range jobs {
 		fmt.Println("worker", id, "started job", j)
 		time.Sleep(time.Second)
@@ -20,7 +20,7 @@ func main() {
 	jobs := make(chan int, numJobs)
 	results := make(chan int, numJobs)
 
-	// 启动 3 个 worker 工作池
+	// 启动 3 个 worker 工作池（请了 3 个员工在待命）
 	for w := 1; w <= 3; w++ {
 		go worker(w, jobs, results)
 	}
