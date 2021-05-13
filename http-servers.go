@@ -6,7 +6,7 @@ import (
 )
 
 func hello(w http.ResponseWriter, req *http.Request) {
-	// 参数 ResponseWriter 是用于写入HTTP相应数据
+	// 参数 ResponseWriter 是用于写入 HTTP 响应数据
 	fmt.Fprintf(w, "hello\n")
 }
 

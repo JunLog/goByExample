@@ -17,7 +17,7 @@ func main() {
 	fmt.Println(filepath.Join("dir1/../dir1", "filename")) // 自动删除多余的目录
 
 	fmt.Println("Dir(p):", filepath.Dir(p))   // 自动分割出路径的 目录
-	fmt.Println("Base(p):", filepath.Base(p)) // 自动分割出路径的 文件
+	fmt.Println("Base(p):", filepath.Dir(p)) // 自动分割出路径的 文件
 	dir, file := filepath.Split(p)            // 分割出 目录 和 文件
 	fmt.Println("Splie(p):", dir, file)
 
@@ -34,6 +34,7 @@ func main() {
 
 	rel, err := filepath.Rel("a/b", "a/b/t/file")
 	// Rel 返回 第二个路径 相对于 第一个路径 的 相对路径，相对路径不存在则返回错误
+	// 第一个路径去第二个路径的 的相对路径 -> t\file
 	if err != nil {
 		panic(err)
 	}
@@ -41,6 +42,7 @@ func main() {
 
 	rel, err = filepath.Rel("a/b", "a/c/t/file")
 	// Rel 返回 第二个路径 相对于 第一个路径 的 相对路径，相对路径不存在则返回错误
+	// 第一个路径去第二个路径的 的相对路径 -> ..\c\t\file
 	if err != nil {
 		panic(err)
 	}

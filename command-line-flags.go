@@ -14,6 +14,7 @@ func main() {
 
 	var svar string
 	flag.StringVar(&svar, "svar", "bar", "a string var")
+	// (已有参数指针，标志名，默认值，描述)
 	// 已有的参数也可用来声明标志，需要用到指针
 
 	flag.Parse() // 所有标志声明完成后，调用来进行命令解析
@@ -43,4 +44,4 @@ func main() {
 // 使用 -h 或者 --help 标志来得到自动生成的这个命令行程序的帮助文本
 // command-line-flags.exe -h
 
-// 用了一个没有定义的标志的话会报错，而已显示帮助文本
+// 用了一个没有定义的标志的话会报错，并且显示帮助文本

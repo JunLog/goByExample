@@ -5,16 +5,16 @@ import (
 	"os"
 )
 
-// 
+//
 func main() {
 	argsWithProg := os.Args
 	argsWithoutProg := os.Args[1:]
 
 	arg := os.Args[3]
 
-	fmt.Println(argsWithProg)
-	fmt.Println(argsWithoutProg)
-	fmt.Println(arg)
+	fmt.Println(argsWithProg) // [./command-line-arguments a b c d]
+	fmt.Println(argsWithoutProg) // [a b c d]
+	fmt.Println(arg) // c
 }
 
 // 执行

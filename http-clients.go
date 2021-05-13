@@ -18,9 +18,11 @@ func main() {
 	// 打印 HTTP response 状态
 	fmt.Println("Response status:", resp.Status)
 
+	// NewScanner 返回一个新的Scanner(序列?)，默认分割功能是ScanLines
 	scanner := bufio.NewScanner(resp.Body)
 	// 打印前五行
 	for i := 0; scanner.Scan() && i < 5; i++ {
+		// Scan 返回一个序列,到达末尾或出现错误会返回 false
 		// 按行读取
 		fmt.Println(scanner.Text())
 	}

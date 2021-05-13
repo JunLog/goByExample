@@ -17,10 +17,11 @@ func main() {
 	d, _ := strconv.ParseInt("0x1c8", 0, 64) // 自动识别16进制
 	fmt.Println(d)
 
-	u, _ := strconv.ParseUint("789", 0, 64)
+	u, _ := strconv.ParseUint("789", 0, 64) // ParseUint 跟 ParseInt 类似，ParseUint 用于无符号数
 	fmt.Println(u)
 
 	k, _ := strconv.Atoi("135") // Atoi是10进制整型转化
+	// Atoi等价于ParseInt(s, 10, 0)，转换为int类型
 	fmt.Println(k)
 
 	_, e := strconv.Atoi("wat")

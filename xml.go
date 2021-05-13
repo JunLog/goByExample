@@ -32,7 +32,7 @@ func main() {
 	if err := xml.Unmarshal(out, &p); err != nil { // 解析 XML 格式字节流
 		panic(err)
 	}
-	fmt.Println(p)
+	fmt.Println(p) // 上面实现了这个接口函数
 	fmt.Println("------------------\n")
 
 	tomato := &Plant{Id: 81, Name: "Tomato"}

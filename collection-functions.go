@@ -66,21 +66,21 @@ func main() {
 	var strs = []string{"桃子", "苹果", "梨", "李子"}
 	var strs2 = []string{"peach", "apple", "pear", "plum"}
 
-	fmt.Println(Index(strs, "梨"))
+	fmt.Println(Index(strs, "梨")) // 返回索引号
 
-	fmt.Println(Include(strs, "葡萄"))
+	fmt.Println(Include(strs, "葡萄")) // 是否包含
 
 	fmt.Println(Any(strs, func(v string) bool {
-		return strings.HasSuffix(v, "子")
+		return strings.HasSuffix(v, "子") // 是否有 这个 后缀
 	}))
 
 	fmt.Println(All(strs, func(v string) bool {
-		return strings.HasSuffix(v, "子")
+		return strings.HasSuffix(v, "子") // 前缀是 hasPrefix()
 	}))
 
 	fmt.Println(Filter(strs, func(v string) bool {
-		return strings.Contains(v, "子")
+		return strings.Contains(v, "子") // 返回包含该字符的切片
 	}))
 
-	fmt.Println(Map(strs2, strings.ToUpper))
+	fmt.Println(Map(strs2, strings.ToUpper)) // 返回经过处理的新切片
 }

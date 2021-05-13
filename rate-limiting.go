@@ -39,8 +39,10 @@ func main() {
 	}
 	close(burstyRequests)
 	for req := range burstyRequests {
-		<-burstyLimiter
+		<-burstyLimiter // 因为原来就有三个，所以前三个可以瞬间执行，接下来的要等 协程 里传进来的
 		fmt.Println("request", req, time.Now())
+		// 这里是模拟爆发请求的，所以耗完前三个，后面的就要限制
+		// 但通常处理完这波请求后,就有时间给 burstyRequests 填充,以便处理后面的请求
 	}
 	// 前 3 个直接处理
 	// 后两个以大约 200ms 速度处理

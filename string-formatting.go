@@ -34,6 +34,7 @@ func main() {
 	fmt.Printf("%e\n", 123400000.0) // 浮点型格式化为科学记数法e
 	fmt.Printf("%E\n", 123400000.0) // 浮点型格式化为科学记数法E
 
+	fmt.Printf("%s\n", "string")     // 基本的字符串
 	fmt.Printf("%s\n", "\"string\"") // 基本的字符串
 
 	fmt.Printf("%q\n", "\"string\"") // 带双引号的字符串输出
@@ -50,7 +51,7 @@ func main() {
 
 	fmt.Printf("|%6s|%6s|\n", "foo", "b") // 字符 宽度、对齐
 
-	fmt.Printf("|%-6s|%-6s|\n", "foo", "b") // 字符 宽度、对齐
+	fmt.Printf("|%-6s|%-6s|\n", "foo", "b") // 字符 宽度、左对齐
 
 	s := fmt.Sprintf("a %s", "string") // Sprintf 是返回一个字符串，不打印
 	fmt.Println(s)

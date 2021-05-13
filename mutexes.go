@@ -23,10 +23,10 @@ func main() {
 		go func() {
 			total := 0
 			for {
-				key := rand.Intn(5)           //随机取一个[0,5) 整数
+				key := rand.Intn(5) //随机取一个[0,5) 整数
 				mutex.Lock()                  // 上锁
 				total += state[key]           // 上锁期间保证独占访问
-				mutex.Unlock()                //开锁
+				mutex.Unlock()                // 开锁
 				atomic.AddUint64(&readOps, 1) // 读取次数 +1
 
 				time.Sleep(time.Millisecond)

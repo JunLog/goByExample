@@ -35,4 +35,5 @@ func main() {
 
 	p("Len:		", len("hello"))
 	p("Char:		", "hello"[1]) //101 , "e" 的 utf8 10进制编码为 101（16进制为65）
+	p("Char:		", string("hello"[1]))
 }

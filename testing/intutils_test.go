@@ -39,6 +39,7 @@ func TestIntMinTableDriven(t *testing.T) {
 	for _, tt := range tests {
 		testname := fmt.Sprintf("%d,%d", tt.a, tt.b)
 		// t.Run 可以运行一个 subtests 子测试，一个子测试对应一行数据
+		// testname 是打印显示测试名
 		t.Run(testname, func(t *testing.T) {
 			ans := IntMin(tt.a, tt.b)
 			if ans != tt.want {
